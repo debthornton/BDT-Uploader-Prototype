@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div id="container">
+        <header>
+            <button id='back-button' class= 'fa fa-angle-left no-show'></button>
+            <p id='header-text'>BDT Document Upload</p>
+        </header>
+        <section class="page active z-index" id='intro-page'>
+            <div class="info-block" id='enter-info-block'>
+                <div class='icon'>
+
+                </div>
+                <p class='description'>
+                    1. Enter your informtion
+                </p>
+            </div>
+            <div class="info-block" id='take-photos-block'>
+                <div class='icon'>
+
+                </div>
+                <p class='description'>
+                    2. Select or take new photos of your documents
+                </p>
+            </div>
+            <div class="info-block" id='upload-block'>
+                <div class='icon'>
+
+                </div>
+                <p class='description'>
+                    3. Upload!
+                </p>
+            </div>
+            <button class='confirmation-button next-button'>
+                Start
+            </button>
+        </section>
+        <section class="page inactive" id='disclaimer-page'>
+            <p class="disclaimer-block">
+                <span>Do not submit applications, recertifications, periodic reports, case change forms, 6-month mailers or
+                     child care enrollment forms through this app.
+                </span>
+            </p>
+            <p class="disclaimer-block">
+                <span>Documents submitted through this service are subject to review.</span>
+                Submission does not guarantee success or continued access to programs administered by BDT. Final eligibility will be determined
+                by BDT upon receipt of all required informtation.
+            </p>
+            <p class="disclaimer-block">
+                <span>
+                    Secure Access:
+                </span>
+                BDT stores and protects your information from unauthorized access, alteration, and destruction.
+            </p>
+            <p class="disclaimer-block">
+                <span>
+                    BDT is not responsible for
+                </span>
+                 voice/text/data or any other type of costs resulting from using this service.
+            </p>
+            <button class='confirmation-button next-button'>
+                Accept
+            </button>
+        </section>
+        <section class="page inactive" id='photo-tutorial-page'>
+            <div id="tutorial-graphic">
+
+            </div>
+            <ul>
+                <li class="tutorial-bullet">
+                    Hold the phone flat, directly above the document. Do not hold your phone at an angle.
+                </li>
+                <li class="tutorial-bullet">
+                    The photo cannot be blurry, dark, wrinkled or cut off.
+                </li>
+                <li class="tutorial-bullet">
+                    Make sure you photograph the whole document.
+                </li>
+            </ul>
+            <button class='confirmation-button next-button'>
+                Next
+            </button>
+        </section>
+        <section class="page inactive" id='personal-details-page'>
+            <form action="#">
+                <input type="text" class="option-block" placeholder='Enter First Name' id='firstname-input'>
+                <input type="text" class="option-block" placeholder='Enter Last Name' id='lastname-input'>
+                <button type="text" class="option-button option-block next-button" id='id-type-button'>
+                    <p id='id-type-text'>Select Identification Type</p>
+                    <p class='fa fa-angle-right'></p>
+                </button>
+                <input type="text" class="option-block" placeholder='Enter Identification Number' id='id-number-input'>
+                <p>(All fields are mandatory)</p>
+            </form>
+            <button class='confirmation-button next-button'>
+                Next
+            </button>
+        </section>
+        <section class="page inactive" id='id-type-page'>
+            <form action="#">
+                <button type="text" class="option-block" id='social-security-button'>
+                    <p>Social Security Number</p>
+                </button>
+                <button type="text" class="option-block" id='case-number-button'>
+                    <p>Case Number</p>
+                </button>
+            </form>
+        </section>
+        <section class="page inactive" id='document-type-page'>
+            <form action="#">
+                <button type="text" class="option-block id-button">
+                    <p>Identification</p>
+                </button>
+                <button type="text" class="option-block id-button">
+                    <p>Residence</p>
+                </button>
+                <button type="text" class="option-block id-button">
+                    <p>Income</p>
+                </button>
+                <button type="text" class="option-block id-button">
+                    <p>Non-Medical Expenses</p>
+                </button>
+                <button type="text" class="option-block id-button">
+                    <p>Medical Expenses</p>
+                </button>
+                <button type="text" class="option-block id-button">
+                    <p>Resources</p>
+                </button>
+            </form>
+        </section>
+        <section class="page inactive" id='upload-prompt-page'>
+            <div id='upload-status-block'>
+                <p id='status-text'>
+                    Uploading photo...
+                </p>
+                <div id='loading-bar'>
+                    <div id='loading-bar-color'></div>
+                </div>
+                <button id='upload-more-button'>
+                    Upload more documents 
+                </button>
+                <button id='view-uploaded-button'>
+                    View uploaded documents
+                </button>
+            </div>
+            <div id='upload-alert'>
+                <div>Upload</div>
+                <button type="text" class="option-block upload-button">
+                    <p>Take a Photo</p>
+                </button>
+                <button type="text" class="option-block upload-button">
+                    <p>Select a Photo</p>
+                </button>
+                <button type="text" class="option-block" id="cancel-button">
+                    <p>Cancel</p>
+                </button>
+            </div>
+        </section>
+        <section class="page inactive" id='uploaded-document-page'>
+            <div type="text" class="option-block uploaded-item">
+                <p>Residence</p>
+                <p>Uploaded 6/15/19</p>
+            </div>
+            <div type="text" class="option-block uploaded-item">
+                <p>Non-Medical Expense</p>
+                <p>Uploaded 5/05/19</p>
+            </div>
+            <div type="text" class="option-block uploaded-item">
+                <p>Income</p>
+                <p>Uploaded 6/23/19</p>
+            </div>
+        </section>
+        <footer>
+            <div class='assistance'>
+                Need assistance? 
+                <a href="tel:+1-215-207-9100">Speak with a specialist to get started.</a>
+            </div>
+        </footer>
+    </div>
+        <script src="js/app.js" async defer></script>
+    </body>
+</html>

@@ -1,0 +1,510 @@
+@import "mixins";
+@import "variables";
+@import "reset";
+
+html {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: gray;
+    padding-top: 5vh;
+}
+
+body {
+   @include fullscreen-flex;
+   max-width: 375px;
+   max-height: 812px;
+   position: relative;
+   border-radius: 30px;
+
+   #container {
+        overflow: hidden;
+        position: relative;
+        @include fullscreen-flex;
+        max-width: 375px;
+        max-height: 812px;
+        border-radius: 30px;
+   }
+   
+   button {
+       border: none;
+       color: $button-color;
+       position: absolute;
+       padding: 8px;
+       border-radius: 3px;
+       cursor: pointer;
+       &:focus {
+         outline: none;
+         color: white;  
+       }
+   }
+}
+
+header {
+    height: 50px;
+    width: 100%;
+    background: $header-color;
+    border-bottom: 1px solid $border-color;
+    font-weight: 700;
+    font-size: 1.1em;
+    @include flex-center;
+
+    #back-button {
+        left: 0;
+        background: transparent;
+        font-size: 2.5em;
+    }
+
+    .no-show {
+        display: none;
+    }
+
+    p {
+        animation: header-fade-in 0.5s ease;
+    }
+
+    @keyframes header-fade-in {
+        from {
+            opacity: 0;
+            transform: translateX(150%);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}
+
+section {
+    @include flex-center(flex-end, column);
+    @include fullscreen-flex;
+    background: $background-color;
+    position: absolute;
+    top: 50px;
+    height: calc(100% - 100px);
+    padding: 20px;
+    transition: transform 0.6s ease;
+
+    .info-block {
+        @include flex-center;
+        width: 100%;
+        border-bottom: 1px solid $border-color;
+        padding: 20px;
+        text-align: center;
+        font-size: 0.9em;
+    }
+
+    button {       
+        width: 80%;
+        background: $button-color;
+        color: white;
+        transition: background 0.3s ease, border 0.3s ease;
+        font-size: 0.8em;    
+        bottom: 25px;
+    }
+
+    .clicked-button {
+        background: $background-color;
+        border: 1px solid $button-color;
+    }
+
+    .confirmation-button {
+        @media screen and (max-height: 450px) {
+            bottom: -10px;
+            height: 50px;
+            width: 100%;
+        }
+    }
+}
+
+#intro-page {
+
+    #enter-info-block {
+        height: 25%;
+    }
+    #take-photos-block {
+        height: 30%;
+    }
+    #upload-block {
+        height: 30%;
+        border-bottom: none;
+    }
+}
+
+#disclaimer-page {
+    span {
+        font-weight: 700;
+    }
+
+    p {
+        margin-bottom: 5vh;
+    }
+}
+
+#photo-tutorial-page {
+
+    #tutorial-graphic {
+        width: 150px;
+        height: 130px;
+        background-image: url(https://res.cloudinary.com/debdev/image/upload/v1562206407/IMG_4923.jpg);
+        background-size: contain;
+    }
+
+    ul {
+        margin-top: 20px;
+
+        li {
+            font-size: 0.95em;
+            margin-bottom: 25px;
+            text-align: justify;
+            padding-left: 15px;
+        }
+    }
+}
+
+.option-block, .option-button {
+    width: 100%;
+    border: none;
+    color:  rgb(15, 15, 15);
+    border-bottom: 1px solid rgba(170, 166, 166, 0.89);
+    height: 46px;
+    font-size: 0.9em;
+    padding: 10px;
+}
+
+#personal-details-page {
+    padding: 0;
+    background: $header-color;
+
+    form {
+        width: 100%;
+
+        #id-type-button {
+            width: 100%;
+            font-size: 0.9em;
+            position: static;
+            background: $background-color;
+            color: $placeholder-color;
+            padding: 0;
+            @include flex-center(space-between, row);
+            &:hover {
+                background: $button-color;
+                color: white;
+            }
+
+            p {
+                font-size: 1.05em; 
+            }
+
+            .fa {
+                font-size: 1.8em;
+                color: $placeholder-color;
+                &:hover {
+                    color: white;
+                } 
+            }
+        }
+
+        input {
+            &:hover {
+                background: $button-color;
+                color: white;
+            }
+            &:focus {
+                background: $button-color;
+                color: white;
+            }
+        }
+
+        ::placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color:  $placeholder-color;
+            opacity: 1;
+            /* Firefox */
+        }
+
+        input:focus::placeholder {
+            color: white;
+        }
+
+        :-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: $placeholder-color;
+        }
+
+        input:focus:-ms-input-placeholder {
+            color: white;
+        }
+
+        ::-ms-input-placeholder {
+            /* Microsoft Edge */
+            color:  $placeholder-color;
+        }
+
+        input:focus::-ms-input-placeholder {
+            color: white;
+        }
+
+        p {
+            padding: 10px;
+            font-size: 0.9em;
+            color: rgba(83, 82, 82, 0.89);
+        }
+    }
+    
+}
+
+#id-type-page {
+    padding: 0;
+    background: $header-color;
+
+    form {
+        width: 100%;
+        .option-block {
+            width: 100%;
+            border: none;
+            color: rgba(83, 82, 82, 0.89);
+            border-bottom: 1px solid rgba(170, 166, 166, 0.89);
+            background: $background-color;
+            height: 46px;
+            font-size: 0.9em;
+            position: static;
+            text-align: left;
+            &:hover {
+                background: $button-color;
+            }
+
+            p {
+                font-size: 1.05em;
+                height: 100%;
+                color: $placeholder-color;
+                padding-left: 10px;
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+    }   
+}
+
+#document-type-page {
+    padding: 0;
+    background: $header-color;
+
+    form {
+        width: 100%;
+        .option-block {
+            width: 100%;
+            border: none;
+            color: rgba(83, 82, 82, 0.89);
+            border-bottom: 1px solid rgba(170, 166, 166, 0.89);
+            background: $background-color;
+            height: 46px;
+            font-size: 0.9em;
+            position: static;
+            text-align: left;
+            &:hover {
+                background: $button-color;
+            }
+
+            p {
+                font-size: 1.05em;
+                color: $placeholder-color;
+                padding-left: 10px;
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+#upload-prompt-page {
+    background: rgba(83, 82, 82, 0.5);
+    text-align: center;
+    justify-content: center;
+    transition: transform 0.6s ease, opacity 0.5s ease;
+
+    #upload-status-block {
+        background: $background-color;
+        width: 100%;
+        height: 135px;
+        position: relative;
+        transform: translateY(-500%);
+        top: -50px;
+        border-radius: 12px;
+        transition: transform 0.6s ease 0.2s;
+        @include flex-center($direction: column);
+
+        @keyframes loading {
+            from {
+                width: 5%;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+        
+        #loading-bar {
+            width: 90%;
+            height: 15px;
+            margin-top: 10px;
+
+            #loading-bar-color {
+                width: 5%;
+                height: 100%;
+                background: greenyellow;
+                border-radius: 12px;
+            } 
+        }
+
+        #upload-more-button, #view-uploaded-button {
+            margin-top: 10px;
+            font-size: 0.8em;
+            font-weight: 700;
+            position: static;
+            background: transparent;
+            color: $button-color;
+            height: 25px;
+        }
+
+        #view-uploaded-button {
+            margin-top: 0;
+        }
+    }
+
+    #upload-alert {
+        position: absolute;
+        transform: translateY(500%);
+        bottom: 10px;
+        transition: transform 0.6s ease 0.2s;     
+
+        div {
+            background: $background-color;
+            font-size: 0.7em;
+            border-bottom: 1px solid rgba(170, 166, 166, 0.89);
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            color: rgba(48, 46, 46, 0.89);
+            height: 36px;
+            @include flex-center;
+        }
+    }
+
+    .option-block {
+        width: 100%;
+        border: none;
+        color: rgba(83, 82, 82, 0.89);
+        border-bottom: 1px solid rgba(170, 166, 166, 0.89);
+        border-radius: 0;
+        background: $background-color;
+        height: 46px;
+        font-size: 0.9em;
+        position: static;
+
+
+        p {
+            font-size: 1.05em;
+            font-weight: 700;
+            color: $button-color;
+        }
+    }
+
+    .option-block:nth-of-type(2) {
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+    }
+
+    #cancel-button {
+        margin-top: 5px;
+        border-radius: 12px;
+    }
+}
+
+#uploaded-document-page {
+    padding: 0;
+    background: $header-color;
+
+    .uploaded-item {
+        width: 100%;
+        background: $background-color;
+        @include flex-center(space-between, row);
+    }
+}
+
+.active {
+    transform: translateX(0);
+}
+
+.becoming-inactive {
+    z-index: 2;
+}
+
+.inactive {
+    transform: translateX(100%);
+}
+
+.z-index {
+    z-index: 3;
+}
+
+#document-type-page.inactive {
+    transform: translateX(0);
+    z-index: 2;
+}
+
+#upload-prompt-page.active {
+    opacity: 1;
+
+    #upload-status-block.visible {
+        transform: translateY(0);
+    }
+
+    #upload-alert {
+        transform: translateY(0);
+    }
+
+    #upload-alert.invisible {
+        transform: translateY(500%);
+    }
+}
+
+#upload-prompt-page.inactive {
+    transform: translateX(0);
+    opacity: 0;
+
+    #upload-status-block {
+        transform: translateY(-500%);
+    }
+
+    #upload-alert {
+        transform: translateY(500%);
+    }
+}
+
+footer {
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+
+    .assistance {
+        font-size: 0.75em;
+        @include flex-center($direction: column);
+        height: 100%;
+        position: relative;
+        bottom: 10px;
+        width: 100%;
+        margin-top: 15px;
+ 
+        a {
+             font-weight: 700;
+             text-align: center;
+             &:focus {
+              color: $font-color;
+             }
+        }
+    }
+}
