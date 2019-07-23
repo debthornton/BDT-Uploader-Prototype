@@ -29,6 +29,17 @@ let viewUploadedButton = document.querySelector('#view-uploaded-button');
 let uploadMoreButton = document.querySelector('#upload-more-button');
 let backButton = document.getElementById('back-button');
 
+let reuploadButtons = [...document.querySelectorAll('.reupload-button')];
+
+reuploadButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        uploadOptions("upload more");
+        setTimeout(function() {
+            pageSwipe(6);
+        }, 1500);
+    })
+});
+
 function Page(index, page) {
     this.active = false;
     this.index = index;
@@ -165,7 +176,7 @@ function uploadOptions(option) {
              loadingBar.style.width = '0';
              pageSwipe(7);
              setTimeout(() => {
-                uploadText.textContent = 'Uploading photo...';
+                uploadText.textContent = 'Uploading document...';
                 uploadText.style.color = 'rgb(21, 52, 106)';
             }, 4500);
             break;
@@ -176,7 +187,7 @@ function uploadOptions(option) {
             loadingBar.style.width = '0';
             pageSwipe(5);
             setTimeout(() => {
-                uploadText.textContent = 'Uploading photo...';
+                uploadText.textContent = 'Uploading document...';
                 uploadText.style.color = 'rgb(21, 52, 106)';
             }, 4500);
             break;

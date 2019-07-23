@@ -143,10 +143,26 @@
                 </button>
             </form>
         </section>
+        <section class="page inactive" id='document-list-page'>
+            <form action="#">
+                <button type="text" class="option-block id-button">
+                    <p>Driver's License</p>
+                </button>
+                <button type="text" class="option-block id-button">
+                    <p>Birth Certificate</p>
+                </button>
+                <button type="text" class="option-block id-button">
+                    <p>Voter's Registration Card</p>
+                </button>
+                <button type="text" class="option-block id-button">
+                    <p>School or Work ID</p>
+                </button>
+            </form>
+        </section>
         <section class="page inactive" id='upload-prompt-page'>
             <div id='upload-status-block'>
                 <p id='status-text'>
-                    Uploading photo...
+                    Uploading document...
                 </p>
                 <div id='loading-bar'>
                     <div id='loading-bar-color'></div>
@@ -166,6 +182,9 @@
                 <button type="text" class="option-block upload-button">
                     <p>Select a Photo</p>
                 </button>
+                <button type="text" class="option-block upload-button">
+                    <p>Select a File</p>
+                </button>
                 <button type="text" class="option-block" id="cancel-button">
                     <p>Cancel</p>
                 </button>
@@ -175,15 +194,21 @@
             <div type="text" class="option-block uploaded-item">
                 <p>Residence</p>
                 <p>Uploaded 6/15/19</p>
+                <p class='reupload-button'>Reupload</p>  
             </div>
             <div type="text" class="option-block uploaded-item">
                 <p>Non-Medical Expense</p>
                 <p>Uploaded 5/05/19</p>
+                <p class='reupload-button'>Reupload</p> 
             </div>
             <div type="text" class="option-block uploaded-item">
                 <p>Income</p>
                 <p>Uploaded 6/23/19</p>
+                <p class='reupload-button'>Reupload</p> 
             </div>
+            <div id='close-app-prompt'>
+                <p>If you have finished uploading documents, you may close this app.</p>
+            </div> 
         </section>
         <footer>
             <div class='assistance'>

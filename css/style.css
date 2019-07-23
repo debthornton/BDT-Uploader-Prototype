@@ -624,7 +624,7 @@ section .clicked-button {
   color: #4186ef;
 }
 
-#upload-prompt-page .option-block:nth-of-type(2) {
+#upload-prompt-page .option-block:nth-of-type(3) {
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
 }
@@ -634,6 +634,31 @@ section .clicked-button {
   border-radius: 12px;
 }
 
+#document-list-page {
+  z-index: 120;
+  opacity: 1;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+}
+
+#document-list-page .option-block {
+  width: 100%;
+  border: none;
+  color: rgba(83, 82, 82, 0.89);
+  border-bottom: 1px solid rgba(170, 166, 166, 0.89);
+  border-radius: 0;
+  background: #fefefe;
+  height: 46px;
+  font-size: 0.9em;
+  position: static;
+}
+
+#document-list-page .option-block p {
+  font-size: 1.05em;
+  font-weight: 700;
+  color: #4186ef;
+}
+
 #uploaded-document-page {
   padding: 0;
   background: #d5d7da;
@@ -641,6 +666,7 @@ section .clicked-button {
 
 #uploaded-document-page .uploaded-item {
   width: 100%;
+  padding-bottom: 50px;
   background: #fefefe;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -655,6 +681,20 @@ section .clicked-button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#uploaded-document-page #close-app-prompt {
+  margin: 20px;
+}
+
+#uploaded-document-page .reupload-button {
+  width: 100%;
+  font-size: 0.9em;
+  text-align: right;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .active {
