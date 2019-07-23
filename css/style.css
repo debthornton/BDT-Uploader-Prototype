@@ -634,13 +634,6 @@ section .clicked-button {
   border-radius: 12px;
 }
 
-#document-list-page {
-  z-index: 120;
-  opacity: 1;
-  -webkit-transform: translate(0);
-          transform: translate(0);
-}
-
 #document-list-page .option-block {
   width: 100%;
   border: none;
